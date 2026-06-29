@@ -1,0 +1,486 @@
+/* =====================================================
+   Kale Farm Manager V3
+      Mobile First Design
+      ===================================================== */
+
+      *{
+          margin:0;
+              padding:0;
+                  box-sizing:border-box;
+                  }
+
+                  :root{
+
+                      --primary:#2E7D32;
+                          --primary-dark:#1B5E20;
+                              --secondary:#81C784;
+
+                                  --background:#F5F7FA;
+                                      --surface:#FFFFFF;
+
+                                          --text:#222;
+                                              --text-light:#666;
+
+                                                  --danger:#D32F2F;
+
+                                                      --shadow:0 4px 12px rgba(0,0,0,.08);
+
+                                                          --radius:18px;
+
+                                                          }
+
+                                                          body{
+
+                                                              font-family:Arial,Helvetica,sans-serif;
+
+                                                                  background:var(--background);
+
+                                                                      color:var(--text);
+
+                                                                      }
+
+                                                                      .app{
+
+                                                                          min-height:100vh;
+
+                                                                              display:flex;
+
+                                                                                  flex-direction:column;
+
+                                                                                  }
+
+                                                                                  .top-bar{
+
+                                                                                      background:linear-gradient(
+                                                                                              135deg,
+                                                                                                      var(--primary),
+                                                                                                              var(--primary-dark)
+                                                                                                                  );
+
+                                                                                                                      color:white;
+
+                                                                                                                          padding:20px;
+
+                                                                                                                              border-radius:0 0 25px 25px;
+
+                                                                                                                                  box-shadow:var(--shadow);
+
+                                                                                                                                  }
+
+                                                                                                                                  .top-bar h1{
+
+                                                                                                                                      font-size:24px;
+
+                                                                                                                                      }
+
+                                                                                                                                      .top-bar p{
+
+                                                                                                                                          margin-top:6px;
+
+                                                                                                                                              opacity:.9;
+
+                                                                                                                                              }
+
+                                                                                                                                              .country{
+
+                                                                                                                                                  margin-top:12px;
+
+                                                                                                                                                      display:inline-block;
+
+                                                                                                                                                          background:rgba(255,255,255,.2);
+
+                                                                                                                                                              padding:8px 16px;
+
+                                                                                                                                                                  border-radius:30px;
+
+                                                                                                                                                                  }
+
+                                                                                                                                                                  main{
+
+                                                                                                                                                                      flex:1;
+
+                                                                                                                                                                          padding:20px 18px 100px;
+
+                                                                                                                                                                          }
+
+                                                                                                                                                                          .page{
+
+                                                                                                                                                                              display:none;
+
+                                                                                                                                                                              }
+
+                                                                                                                                                                              .page.active{
+
+                                                                                                                                                                                  display:block;
+
+                                                                                                                                                                                  }
+
+                                                                                                                                                                                  .page h2{
+
+                                                                                                                                                                                      margin-bottom:20px;
+
+                                                                                                                                                                                      }
+
+                                                                                                                                                                                      .cards{
+
+                                                                                                                                                                                          display:grid;
+
+                                                                                                                                                                                              gap:15px;
+
+                                                                                                                                                                                              }
+
+                                                                                                                                                                                              .card{
+
+                                                                                                                                                                                                  background:var(--surface);
+
+                                                                                                                                                                                                      border-radius:var(--radius);
+
+                                                                                                                                                                                                          padding:18px;
+
+                                                                                                                                                                                                              box-shadow:var(--shadow);
+
+                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                              .card h3{
+
+                                                                                                                                                                                                                  margin-top:10px;
+
+                                                                                                                                                                                                                      color:var(--primary);
+
+                                                                                                                                                                                                                          font-size:24px;
+
+                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                          .card span{
+
+                                                                                                                                                                                                                              color:var(--text-light);
+
+                                                                                                                                                                                                                                  font-size:14px;
+
+                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                  .welcome{
+
+                                                                                                                                                                                                                                      margin-top:20px;
+
+                                                                                                                                                                                                                                          background:white;
+
+                                                                                                                                                                                                                                              padding:18px;
+
+                                                                                                                                                                                                                                                  border-radius:var(--radius);
+
+                                                                                                                                                                                                                                                      box-shadow:var(--shadow);
+
+                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                      .welcome h3{
+
+                                                                                                                                                                                                                                                          color:var(--primary);
+
+                                                                                                                                                                                                                                                              margin-bottom:10px;
+
+                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                              /* =====================================================
+                                                                                                                                                                                                                                                                 Forms
+                                                                                                                                                                                                                                                                 ===================================================== */
+
+                                                                                                                                                                                                                                                                 form{
+
+                                                                                                                                                                                                                                                                     display:flex;
+
+                                                                                                                                                                                                                                                                         flex-direction:column;
+
+                                                                                                                                                                                                                                                                             gap:14px;
+
+                                                                                                                                                                                                                                                                             }
+
+                                                                                                                                                                                                                                                                             label{
+
+                                                                                                                                                                                                                                                                                 font-size:14px;
+
+                                                                                                                                                                                                                                                                                     font-weight:600;
+
+                                                                                                                                                                                                                                                                                         color:var(--text);
+
+                                                                                                                                                                                                                                                                                         }
+
+                                                                                                                                                                                                                                                                                         input,
+                                                                                                                                                                                                                                                                                         select,
+                                                                                                                                                                                                                                                                                         textarea{
+
+                                                                                                                                                                                                                                                                                             width:100%;
+
+                                                                                                                                                                                                                                                                                                 padding:14px;
+
+                                                                                                                                                                                                                                                                                                     border:1px solid #ddd;
+
+                                                                                                                                                                                                                                                                                                         border-radius:12px;
+
+                                                                                                                                                                                                                                                                                                             font-size:16px;
+
+                                                                                                                                                                                                                                                                                                                 background:#fff;
+
+                                                                                                                                                                                                                                                                                                                     outline:none;
+
+                                                                                                                                                                                                                                                                                                                         transition:.25s;
+
+                                                                                                                                                                                                                                                                                                                         }
+
+                                                                                                                                                                                                                                                                                                                         input:focus,
+                                                                                                                                                                                                                                                                                                                         select:focus,
+                                                                                                                                                                                                                                                                                                                         textarea:focus{
+
+                                                                                                                                                                                                                                                                                                                             border-color:var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                 box-shadow:0 0 0 3px rgba(46,125,50,.15);
+
+                                                                                                                                                                                                                                                                                                                                 }
+
+                                                                                                                                                                                                                                                                                                                                 /* =====================================================
+                                                                                                                                                                                                                                                                                                                                    Buttons
+                                                                                                                                                                                                                                                                                                                                    ===================================================== */
+
+                                                                                                                                                                                                                                                                                                                                    button{
+
+                                                                                                                                                                                                                                                                                                                                        border:none;
+
+                                                                                                                                                                                                                                                                                                                                            border-radius:12px;
+
+                                                                                                                                                                                                                                                                                                                                                padding:14px;
+
+                                                                                                                                                                                                                                                                                                                                                    font-size:16px;
+
+                                                                                                                                                                                                                                                                                                                                                        font-weight:600;
+
+                                                                                                                                                                                                                                                                                                                                                            cursor:pointer;
+
+                                                                                                                                                                                                                                                                                                                                                                transition:.25s;
+
+                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                form button{
+
+                                                                                                                                                                                                                                                                                                                                                                    background:var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                                                        color:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                        form button:hover{
+
+                                                                                                                                                                                                                                                                                                                                                                            background:var(--primary-dark);
+
+                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                            #backupBtn{
+
+                                                                                                                                                                                                                                                                                                                                                                                background:#1976D2;
+
+                                                                                                                                                                                                                                                                                                                                                                                    color:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                                        margin-bottom:10px;
+
+                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                        #restoreBtn{
+
+                                                                                                                                                                                                                                                                                                                                                                                            background:#00897B;
+
+                                                                                                                                                                                                                                                                                                                                                                                                color:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom:10px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                                                                    #clearBtn{
+
+                                                                                                                                                                                                                                                                                                                                                                                                        background:var(--danger);
+
+                                                                                                                                                                                                                                                                                                                                                                                                            color:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                            /* =====================================================
+                                                                                                                                                                                                                                                                                                                                                                                                               Lists
+                                                                                                                                                                                                                                                                                                                                                                                                               ===================================================== */
+
+                                                                                                                                                                                                                                                                                                                                                                                                               .list{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                   margin-top:20px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                       display:flex;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                           flex-direction:column;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                               gap:15px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                               }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                               .list-item{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                   background:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                       border-radius:14px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                           padding:16px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                               box-shadow:var(--shadow);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   border-left:5px solid var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   .list-item h4{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       margin-bottom:8px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       .list-item p{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                           color:var(--text-light);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               font-size:14px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               .list-item .amount{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   margin-top:8px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       font-size:18px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                           font-weight:bold;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               color:var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               /* =====================================================
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Bottom Navigation
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ===================================================== */
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  .bottom-nav{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      position:fixed;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          left:0;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              bottom:0;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  width:100%;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      height:72px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          background:#fff;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              display:flex;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  justify-content:space-around;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      align-items:center;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          box-shadow:0 -3px 15px rgba(0,0,0,.08);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              z-index:1000;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              .nav-btn{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  flex:1;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      background:none;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          border:none;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              display:flex;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  flex-direction:column;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      align-items:center;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          justify-content:center;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              color:#777;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  font-size:12px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      gap:4px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          transition:.25s;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .nav-btn .icon{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              font-size:22px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              .nav-btn.active{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  color:var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      font-weight:bold;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      .nav-btn:hover{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          color:var(--primary);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          /* =====================================================
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Responsive Design
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ===================================================== */
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @media(min-width:768px){
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 .cards{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         grid-template-columns:repeat(2,1fr);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 main{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         max-width:900px;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 margin:auto;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     /* =====================================================
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Simple Fade Animation
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ===================================================== */
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .page{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            animation:fadeIn .25s ease;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @keyframes fadeIn{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        opacity:0;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                transform:translateY(10px);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        to{
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                opacity:1;
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        transform:translateY(0);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
